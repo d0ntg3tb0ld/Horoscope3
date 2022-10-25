@@ -2,12 +2,17 @@ const express = require('express')
 const app = express()
 const cors = require('cors')
 const PORT = 8000
+const date = require('date-fns')
+var format = require('date-fns/format')
+var add = require('date-fns/add')
+var newdate = format(new Date(), 'MMMM/dd/yyyy')
 
 app.use(cors())
 app.use(express.static('public'))
 
 const zodiacs = {
     'aries':{
+        'todays_date': newdate,
         'date_range':'March 21 - April 19',
         'planet':'Mars',
         'day':'Tuesday',
