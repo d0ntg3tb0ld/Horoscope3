@@ -1,10 +1,10 @@
-document.querySelector('#glahh').addEventListener('click', makeReq)
+document.getElementById('#glahh').addEventListener('click', makeReq)
 
 async function makeReq(){
 
-  const zodiacsName = document.querySelector("#lopp").value.toLowerCase();
+  const zodiacName = document.getElementById("#lopp").value
   try{
-    const res = await fetch(`https://horoscopev2-5-demo.herokuapp.com/api/${zodiacsName}`)
+    const res = await fetch(`https://horoscopev2-5-demo.herokuapp.com/api/${zodiacName}`)
     const data = await res.json()
     console.log(data);
     document.querySelector("#glee").textContent = data.date_range
