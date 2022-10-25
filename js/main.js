@@ -1,18 +1,14 @@
-document.querySelector('#glahh').addEventListener('click', makeReq)
+document.querySelector('button').addEventListener('click', apiRequest)
 
-async function makeReq(){
+async function apiRequest(){
+    const zodiac = document.querySelector('input').value
+    try{
+        const response = await fetch(`https://horoscopev2-5-demo.herokuapp.com//api/${zodiac}`)
+        const data = await response.json()
 
-  const zodiac = document.querySelector("#lopp").value.toLowerCase();
-  const res = await fetch(`https://horoscopev2-5-demo.herokuapp.com/api/${zodiac}`)
-  const data = await res.json()
-
-  console.log(data);
-  document.querySelector("#glee").textContent = data.date_range
-  document.querySelector("#gleeb").textContent = data.planet
-  document.querySelector("#gleec").textContent = data.day
-  document.querySelector("#gleed").textContent = data.color
-  document.querySelector("#gleee").textContent = data.number
-  document.querySelector("#gleef").textContent = data.gemstones
-  document.querySelector("#gleeg").textContent = data.herbs
-  document.querySelector("#gleeh").textContent = data.todays_date
+        console.log(data)
+        document.querySelector('h4').innerText = data.date_range
+    }catch(error){
+        console.log(error)
+    }
 }
