@@ -1,22 +1,18 @@
-document.getElementById('#glahh').addEventListener('click', makeReq)
+document.querySelector('#glahh').addEventListener('click', makeReq)
 
 async function makeReq(){
 
-  const zodiacName = document.getElementById("#lopp").value
-  try{
-    const res = await fetch(`https://horoscopev2-5-demo.herokuapp.com/api/${zodiacName}`)
-    const data = await res.json()
-    console.log(data);
-    document.querySelector("#glee").textContent = data.date_range
-    document.querySelector("#gleeb").textContent = data.planet
-    document.querySelector("#gleec").textContent = data.day
-    document.querySelector("#gleed").textContent = data.color
-    document.querySelector("#gleee").textContent = data.number
-    document.querySelector("#gleef").textContent = data.gemstones
-    document.querySelector("#gleeg").textContent = data.herbs
-  }catch(error){
-    console.log(error)
-}
+  const zodiac = document.querySelector("#lopp").value.toLowerCase();
+  const res = await fetch(`https://horoscopev2-5-demo.herokuapp.com/api/${zodiac}`)
+  const data = await res.json()
 
-//   document.querySelector("#gleeh").textContent = data.todays_date
+  console.log(data);
+  document.querySelector("#glee").textContent = data.date_range
+  document.querySelector("#gleeb").textContent = data.planet
+  document.querySelector("#gleec").textContent = data.day
+  document.querySelector("#gleed").textContent = data.color
+  document.querySelector("#gleee").textContent = data.number
+  document.querySelector("#gleef").textContent = data.gemstones
+  document.querySelector("#gleeg").textContent = data.herbs
+  document.querySelector("#gleeh").textContent = data.todays_date
 }
