@@ -16,7 +16,7 @@ const zodiacs = {
         'date_range':'April 20 - May 20',
         'planet':'Venus',
         'day':'Friday',
-        'color':'Greenn or Yellow',
+        'color':'Green or Yellow',
         'number':'5',
         'gemstones':'Diamond',
         'herbs': 'Yellow Roses, Calendula Flowers, Parsley, Cinnamon, Sandalwood, Maidens Hair'
@@ -133,6 +133,6 @@ app.get('/api/:zodiacsName', (request, response)=>{
     }
 })
 
-app.listen(PORT, ()=>{
+app.listen(process.env.PORT || PORT, ()=>{
     console.log(`The server is running on port ${PORT}! You better go catch it!`)
 })
