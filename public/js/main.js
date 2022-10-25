@@ -7,7 +7,7 @@ async function apiRequest(){
         const data = await response.json()
 
         console.log(data)
-        document.querySelector('h2').innerText = data.date_range
+        document.querySelector('#glee').innerText = data.date_range
     }catch(error){
         console.log(error)
     }
