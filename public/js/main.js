@@ -3,7 +3,7 @@ document.querySelector('button').addEventListener('click', makeReq)
 async function makeReq(){
 
     const zodiac = document.querySelector("#lopp").value.toLowerCase();
-    const res = await fetch(`https://horoscopev2-5-demo.herokuapp.com/${zodiac}`)
+    const res = await fetch(`https://horoscopev2-5-demo.herokuapp.com/api/${zodiac}`)
     const data = await res.json()
   
     console.log(data);
