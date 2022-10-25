@@ -5,7 +5,7 @@ const PORT = 8000
 const date = require('date-fns')
 var format = require('date-fns/format')
 var add = require('date-fns/add')
-var newdate = format(new Date(), 'MMMM dd yyyy')
+var newdate = format(new Date(), 'MMMM dd, yyyy')
 
 app.use(cors())
 app.use(express.static('public'))
@@ -140,6 +140,12 @@ const zodiacs = {
         'number':'unknown',
         'gemstones':'unknown',
         'herbs': 'unknown'
+    }
+}
+function giveMeFive(zodiacs) {
+    for (var value in zodiacs) {
+      if (value === newdate) console.log(value);
+    //   if (obj[key].length === 5) five.push(obj[key]);
     }
 }
 app.get('/', (request,response)=>{
